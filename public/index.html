@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Fiona Dumais" />
+  <meta name="description" content="Fiona Dumais" />
+  <meta property="og:description" content="Fiona Dumais" />
+  <link rel="icon" href="assets/images/gate2-removebg-preview.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/images/gate2-removebg-preview.png" type="image/png" />
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Dancing+Script&display=swap" rel="stylesheet">
+  <title>Fiona Dumais</title>
+  <style>
+    body {
+      background-color: #ececec;
+      font-family: 'Special Elite', cursive;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      margin-top: 2rem;
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+      max-width: 1000px;
+      padding: 0 1rem;
+    }
+
+    .button-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+      transform: rotate(-1deg);
+      transition: transform 0.3s ease;
+    }
+
+    .button-item:nth-child(2) {
+      transform: rotate(2deg) translateY(50px);
+    }
+
+    .button-item:nth-child(3) {
+      transform: rotate(-3deg) translateY(-5px);
+    }
+    .button-item:nth-child(3) img {
+      transform: scale(0.8) rotate(2.5deg);
+    }
+    .button-item img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+     
+    }
+
+    .button-item p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .button-item {
+        max-width: 120px;
+      }
+
+      header {
+        font-size: 2.2rem;
+      }
+
+      .button-item p {
+        font-size: 0.9rem;
+      }
+    }
+    header img {
+        max-width: 400px;
+        width: 80%;
+        height: auto;
+        margin-top: 2rem;
+        transform: scale(1.1) rotate(2deg);
+        transition: transform 0.5s ease-in-out;
+        }
+  </style>
+</head>
+<body>
+  <header><img src="assets/images/signature.png" alt="Fiona Dumais Signature"></header>
+
+  <div class="button-grid">
+    <div class="button-item">
+      <a href="portfolio.html">
+        <img src="assets/images/gate-removebg-preview.png" alt="Portfolio">
+      </a>
+      <p>Portfolio</p>
+    </div>
+    <div class="button-item">
+      <a href="contact.html">
+        <img src="assets/images/key2-removebg-preview.png" alt="Contact">
+      </a>
+      <p>Contact</p>
+    </div>
+    <div class="button-item">
+      <a href="cv.html">
+        <img src="assets/images/doll_isnet-anime.png" alt="CV and Bio">
+      </a>
+      <p>CV + Bio</p>
+    </div>
+  </div>
+</body>
+</html>
