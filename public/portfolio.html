@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="Fiona Dumais" />
@@ -8,7 +9,6 @@
   <meta property="og:description" content="Fiona Dumais" />
   <link rel="icon" href="assets/images/gate2-removebg-preview.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/images/gate2-removebg-preview.png" type="image/png" />
-  <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Dancing+Script&display=swap" rel="stylesheet">
   <title>Fiona Dumais</title>
   <style>
@@ -16,82 +16,116 @@
       background-color: #ececec;
       font-family: 'Special Elite', cursive;
       margin: 0;
-      padding: 0;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      max-width: 800px;
+      
+    }
+
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      text-decoration: underline;
+      color: #000;
     }
 
     header {
-      margin-top: 2rem;
       font-family: 'Dancing Script', cursive;
       font-size: 3rem;
       text-align: center;
-    }
-
-    .button-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-      max-width: 1000px;
-      padding: 0 1rem;
-    }
-
-    .button-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 200px;
-      transform: rotate(-1deg);
-    }
-
-    .button-item:nth-child(2) {
-      transform: rotate(2deg) translateY(10px);
-    }
-
-    .button-item:nth-child(3) {
-      transform: rotate(-3deg) translateY(-5px);
-    }
-
-    .button-item img {
       width: 100%;
-      max-width: 180px;
+      margin-bottom: 2rem;
+    }
+
+    .artwork {
+      margin-bottom: 3rem;
+    }
+
+    .artwork img {
+      max-width: 50%;
       height: auto;
-      cursor: pointer;
-     
+      display: block;
     }
 
-    .button-item p {
+    .caption {
       margin-top: 0.5rem;
-      font-size: 1rem;
-      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
-    @media (max-width: 600px) {
-      .button-item {
-        max-width: 120px;
-      }
-
-      header {
-        font-size: 2.2rem;
-      }
-
-      .button-item p {
-        font-size: 0.9rem;
-      }
+    .caption em {
+      font-style: italic;
     }
-    header img {
-        max-width: 400px;
-        width: 80%;
-        height: auto;
-        margin-top: 2rem;
-        transform: scale(1.1) rotate(2deg);
-        }
   </style>
 </head>
 <body>
-  <header><img src="assets/images/signature.png" alt="Fiona Dumais Signature"></header>
+
+  <div class="artwork">
+    <img src="assets/images/work/what-could-be.jpg" alt="What Could Be">
+    <div class="caption">
+      <em>What Could Be</em>, 2025<br>
+      Oil paint on canvas<br>
+      28 x 30 inches
+    </div>
+  </div>
+
+  <div class="artwork">
+    <img src="assets/images/work/starburst.jpg" alt="Starburst">
+    <div class="caption">
+      <em>Starburst</em>, 2024<br>
+      Oil paint on canvas<br>
+      30 x 30 inches
+    </div>
+  </div>
+
+  <div class="artwork">
+    <img src="assets/images/work/once-loved.jpg" alt="Once Loved">
+    <div class="caption">
+      <em>Once Loved</em>, 2024<br>
+      Hankies, thread, wooden dowel, buttons, lace<br>
+      16 x 20 inches
+    </div>
+  </div>
+
+  <div class="artwork">
+    <img src="assets/images/work/ephemera.jpg" alt="Ephemera">
+    <div class="caption">
+      <em>Ephemera</em>, 2024<br>
+      Oil paint on board, buttons, beads, shells, etc<br>
+      11 x 24 inches
+    </div>
+  </div>
+
+  <div class="artwork">
+    <img src="assets/images/work/self-portrait.jpg" alt="Self Portrait">
+    <div class="caption">
+      <em>Self Portrait</em>, 2024<br>
+      Oil paint on canvas<br>
+      28 x 32 inches
+    </div>
+  </div>
+
+  <div class="artwork">
+    <img src="assets/images/work/meme.jpg" alt="Meme">
+    <div class="caption">
+      <em>Meme</em>, 2025<br>
+      Oil paint on canvas, pearl pins, crochet thread<br>
+      1080 x 1350 pixels
+    </div>
+  </div>
+
+  <div class="artwork">
+    <img src="assets/images/work/lock-and-key.jpg" alt="Lock and Key">
+    <div class="caption">
+      <em>Lock and Key</em>, 2025<br>
+      Oil paint, polymer clay, vintage lace<br>
+      11 x 14 inches
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">← Back to index</a>
+
 </body>
 </html>
