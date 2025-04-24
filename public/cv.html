@@ -1,97 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Fiona Dumais" />
-  <meta name="description" content="Fiona Dumais" />
-  <meta property="og:description" content="Fiona Dumais" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Fiona Dumais - About" />
+  <meta name="description" content="About Fiona Dumais" />
+  <meta property="og:description" content="About Fiona Dumais" />
   <link rel="icon" href="assets/images/gate2-removebg-preview.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/images/gate2-removebg-preview.png" type="image/png" />
-  <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Dancing+Script&display=swap" rel="stylesheet">
-  <title>Fiona Dumais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <title>About | Fiona Dumais</title>
   <style>
     body {
       background-color: #ececec;
-      font-family: 'Special Elite', cursive;
+      font-family: 'Courier Prime', monospace;
       margin: 0;
-      padding: 0;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      max-width: 800px;
+      
     }
 
-    header {
-      margin-top: 2rem;
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      text-decoration: underline;
+      color: #000;
+    }
+
+    h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 3rem;
-      text-align: center;
+      margin-bottom: 1rem;
+      margin-top: 0;
     }
 
-    .button-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-      max-width: 1000px;
-      padding: 0 1rem;
+    section {
+      margin-bottom: 2rem;
     }
 
-    .button-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 200px;
-      transform: rotate(-1deg);
-    }
-
-    .button-item:nth-child(2) {
-      transform: rotate(2deg) translateY(10px);
-    }
-
-    .button-item:nth-child(3) {
-      transform: rotate(-3deg) translateY(-5px);
-    }
-
-    .button-item img {
-      width: 100%;
-      max-width: 180px;
-      height: auto;
-      cursor: pointer;
-     
-    }
-
-    .button-item p {
+    .contact-info {
       margin-top: 0.5rem;
-      font-size: 1rem;
-      text-align: center;
+      line-height: 1.6;
     }
 
-    @media (max-width: 600px) {
-      .button-item {
-        max-width: 120px;
-      }
-
-      header {
-        font-size: 2.2rem;
-      }
-
-      .button-item p {
-        font-size: 0.9rem;
-      }
+    .statement, .bio, .education, .exhibitions {
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
-    header img {
-        max-width: 400px;
-        width: 80%;
-        height: auto;
-        margin-top: 2rem;
-        transform: scale(1.1) rotate(2deg);
-        }
+
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <header><img src="assets/images/signature.png" alt="Fiona Dumais Signature"></header>
+
+  
+
+  <section class="bio">
+    <div><strong>B.</strong> November 12, 2002</div>
+    <div>Currently lives and works in Richmond, Virginia</div>
+    <!-- <div class="contact-info">
+      <a href="mailto:fionadumais@gmail.com">fionadumais@gmail.com</a> | 703 989 5657 | <a href="https://fionadumais.web.app" target="_blank">fionadumais.web.app</a>
+    </div> -->
+  </section>
+
+  <section class="statement">
+    <div class="section-title">Artist Statement</div>
+    <p>
+      My work explores the topics of obscurity by visually researching the impact objects have on self-image and memory.
+      I am fascinated by how our possessions shape our perceptions of life — through trinkets, momentos, worn-out clothing,
+      family heirlooms, hankerchiefs — and how they are more than objects. These objects hold memories, ideas, and become
+      an extension of oneself, becoming mirrors of identity. Objects and memories will transform over time, casting a patina
+      of misremembering while the memory gradually fades and the object wears.
+    </p>
+  </section>
+
+  <section class="education">
+    <div class="section-title">Education</div>
+    <p>
+      2025 — BFA Painting and Printmaking, Virginia Commonwealth University, Richmond, VA<br>
+      <em>[in progress]</em>
+    </p>
+  </section>
+
+  <section class="exhibitions">
+    <div class="section-title">Exhibitions</div>
+    <p>
+      2025 — Painting and Printmaking Spring Salon Show, Richmond, VA
+    </p>
+  </section>
+  
+  <a href="index.html" class="back-link">← Back to index</a>
+
 </body>
 </html>

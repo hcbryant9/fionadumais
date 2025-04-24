@@ -1,97 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Fiona Dumais" />
-  <meta name="description" content="Fiona Dumais" />
-  <meta property="og:description" content="Fiona Dumais" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Fiona Dumais - Contact" />
+  <meta name="description" content="Contact Fiona Dumais" />
+  <meta property="og:description" content="Contact Fiona Dumais" />
   <link rel="icon" href="assets/images/gate2-removebg-preview.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/images/gate2-removebg-preview.png" type="image/png" />
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Dancing+Script&display=swap" rel="stylesheet">
-  <title>Fiona Dumais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dancing+Script&display=swap" rel="stylesheet">
+  <title>Contact | Fiona Dumais</title>
   <style>
     body {
       background-color: #ececec;
-      font-family: 'Special Elite', cursive;
+      font-family: 'Courier Prime', monospace;
       margin: 0;
-      padding: 0;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      max-width: 800px;
+      
     }
 
-    header {
-      margin-top: 2rem;
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      text-decoration: underline;
+      color: #000;
+    }
+
+    h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 3rem;
-      text-align: center;
+      margin-bottom: 1rem;
+      margin-top: 0;
     }
 
-    .button-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-      max-width: 1000px;
-      padding: 0 1rem;
-    }
-
-    .button-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 200px;
-      transform: rotate(-1deg);
-    }
-
-    .button-item:nth-child(2) {
-      transform: rotate(2deg) translateY(10px);
-    }
-
-    .button-item:nth-child(3) {
-      transform: rotate(-3deg) translateY(-5px);
-    }
-
-    .button-item img {
-      width: 100%;
-      max-width: 180px;
-      height: auto;
-      cursor: pointer;
-     
-    }
-
-    .button-item p {
-      margin-top: 0.5rem;
+    .contact-info {
       font-size: 1rem;
-      text-align: center;
+      line-height: 1.8;
     }
 
-    @media (max-width: 600px) {
-      .button-item {
-        max-width: 120px;
-      }
-
-      header {
-        font-size: 2.2rem;
-      }
-
-      .button-item p {
-        font-size: 0.9rem;
-      }
+    .contact-info a {
+      color: black;
+      text-decoration: underline;
     }
-    header img {
-        max-width: 400px;
-        width: 80%;
-        height: auto;
-        margin-top: 2rem;
-        transform: scale(1.1) rotate(2deg);
-        }
+    .tooltip {
+      font-size: 0.85rem;
+      margin-left: 0.5rem;
+      color: green;
+      visibility: hidden;
+    }
+
+    .tooltip.visible {
+      visibility: visible;
+    }
   </style>
 </head>
 <body>
-  <header><img src="assets/images/signature.png" alt="Fiona Dumais Signature"></header>
+
+
+  <div class="contact-info">
+    <div>
+      Email: 
+      <a id="email-link">fionadumais@gmail.com</a>
+      <span id="tooltip" class="tooltip">Copied!</span>
+    </div>
+    <div>Phone: 703-989-5657</div>
+    <div>Instagram: 
+      <a href="https://instagram.com/sleeptodream.fi" target="_blank">@sleeptodream.fi</a>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link" style="margin-top: 2rem;">← Back to index</a>
+
+  <script>
+    const emailLink = document.getElementById('email-link');
+    const tooltip = document.getElementById('tooltip');
+
+    emailLink.addEventListener('click', () => {
+      const email = emailLink.textContent;
+      navigator.clipboard.writeText(email).then(() => {
+        tooltip.classList.add('visible');
+        setTimeout(() => tooltip.classList.remove('visible'), 2000);
+      });
+    });
+  </script>
+
 </body>
 </html>
