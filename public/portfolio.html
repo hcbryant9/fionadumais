@@ -59,9 +59,40 @@
     .caption em {
       font-style: italic;
     }
+    /* Image modal overlay */
+  .image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+  }
+
+  /* Enlarged image */
+  .image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.3s ease;
+  }
+
+  .image-modal.show img {
+    transform: scale(1);
+  }
+
+  /* Optional: make images feel clickable */
+  .artwork img {
+    cursor: zoom-in;
+  }
+
   </style>
 </head>
 <body>
+  <div class="image-modal" id="imageModal">
+  <img src="" alt="Enlarged artwork">
+  </div>
   <div class="artwork">
     <img src="assets/images/work/mirror.jpg" alt="Mirror">
     <div class="caption">
@@ -147,6 +178,30 @@
 
 
   <a href="index.html" class="back-link">← Back to index</a>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = modal.querySelector("img");
+
+  document.querySelectorAll(".artwork img").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.style.display = "flex";
+      setTimeout(() => modal.classList.add("show"), 10);
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.remove("show");
+    setTimeout(() => {
+      modal.style.display = "none";
+      modalImg.src = "";
+    }, 200);
+  });
+});
+</script>
+
 
 </body>
 </html>
