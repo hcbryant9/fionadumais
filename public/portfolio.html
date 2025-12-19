@@ -82,17 +82,95 @@
     transform: scale(1);
   }
 
-  /* Optional: make images feel clickable */
+  
   .artwork img {
     cursor: zoom-in;
   }
+    .modal-images {
+    display: flex;
+    gap: 20px;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .modal-images img {
+    max-width: 45vw;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+
 
   </style>
 </head>
 <body>
   <div class="image-modal" id="imageModal">
-  <img src="" alt="Enlarged artwork">
+    <div class="modal-images"></div>
   </div>
+
+  <div class="artwork">
+    <img src="assets/images/work/MakeAJoyfulNoise.JPG" alt="makeajoy">
+    <div class="caption">
+      <em>Make a Joyful Noise</em>, 2025<br>
+      Oil on panel, beeswax, polymer clay<br>
+      5 x 7 inches
+    </div>
+  </div>
+  <div class="artwork">
+    <img src="assets/images/work/ReachForTheStars.JPG" alt="Stars">
+    <div class="caption">
+      <em>Reach for the Stars</em>, 2025<br>
+      Oil on panel, beeswax, polymer clay<br>
+      5 x 7 inches
+    </div>
+  </div>
+  <div class="artwork">
+    <img src="assets/images/work/YouCanAlwaysFudgeaLittleDuringTheSeason.JPG" alt="Mirror">
+    <div class="caption">
+      <em>You can Always Fudge a Little During the Season</em>, 2025<br>
+      Oil on panel, beeswax<br>
+      5 x 7 inches
+    </div>
+  </div>
+  <div class="artwork">
+    <img src="assets/images/work/TheGoodLordAlwaysDelivers.JPG" alt="Mirror">
+    <div class="caption">
+      <em>The Lord Always Delivers</em>, 2025<br>
+      Oil on panel, cold wax<br>
+      5 x 7 inches
+    </div>
+  </div>
+  <div class="artwork">
+    <img src="assets/images/work/OnceUponAHolyNight.JPG" alt="Mirror">
+    <div class="caption">
+      <em>Once Upon a Holy Night</em>, 2025<br>
+      Oil on panel, cold wax<br>
+      5 x 7 inches
+    </div>
+  </div>
+  <div class="artwork">
+    <img
+    src="assets/images/work/RoomsWithGate 2.JPG"
+    alt="Untitled"
+    data-images="
+      assets/images/work/rooms.JPG,
+      assets/images/work/RoomsWithGate 2.JPG
+    "
+>
+    <div class="caption">
+      <em>Untitled</em>, 2025<br>
+      Oil on wood panels, crochet thread, wire<br>
+      17 x 15 inches
+    </div>
+  </div>
+  <div class="artwork">
+    <img src="assets/images/work/dollhouse.JPG" alt="Mirror">
+    <div class="caption">
+      <em>Dollhouse</em>, 2025<br>
+      Oil on canvas<br>
+      32 x 28 inches
+    </div>
+  </div>
+
   <div class="artwork">
     <img src="assets/images/work/mirror.jpg" alt="Mirror">
     <div class="caption">
@@ -180,26 +258,37 @@
   <a href="index.html" class="back-link">← Back to index</a>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("imageModal");
-  const modalImg = modal.querySelector("img");
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const container = modal.querySelector(".modal-images");
 
-  document.querySelectorAll(".artwork img").forEach(img => {
-    img.addEventListener("click", () => {
-      modalImg.src = img.src;
-      modal.style.display = "flex";
-      setTimeout(() => modal.classList.add("show"), 10);
+    document.querySelectorAll(".artwork img").forEach(img => {
+      img.addEventListener("click", () => {
+        container.innerHTML = "";
+
+        const images = img.dataset.images
+          ? img.dataset.images.split(",").map(s => s.trim())
+          : [img.src];
+
+        images.forEach(src => {
+          const el = document.createElement("img");
+          el.src = src;
+          container.appendChild(el);
+        });
+
+        modal.style.display = "flex";
+        setTimeout(() => modal.classList.add("show"), 10);
+      });
+    });
+
+    modal.addEventListener("click", () => {
+      modal.classList.remove("show");
+      setTimeout(() => {
+        modal.style.display = "none";
+        container.innerHTML = "";
+      }, 200);
     });
   });
-
-  modal.addEventListener("click", () => {
-    modal.classList.remove("show");
-    setTimeout(() => {
-      modal.style.display = "none";
-      modalImg.src = "";
-    }, 200);
-  });
-});
 </script>
 
 
